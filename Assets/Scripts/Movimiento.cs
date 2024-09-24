@@ -6,58 +6,87 @@ using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class Movimiento : MonoBehaviour
 {
-    // Start is called before the first frame update
+	private Rigidbody2D RigidBody2D;
+	public Text Ganaste;
+	private byte speed = 5;
+	float x, y;
 
-    private Rigidbody2D RigidBody2D;
-    public Text Ganaste;
-    private byte speed = 5;
-    void Start()
-    {
-       
-        RigidBody2D = GetComponent<Rigidbody2D>();//toma el componente de rigidbody y lo mete al script
+	private byte health = 3;
+	public GameObject[] corazones = new GameObject[3];
+	public Transform PuntoDPartida;
 
-    }
+	private bool canMove = true; // Nueva variable para controlar el movimiento
 
-    // Update is called once per frame
+	void Start()
+	{
+		RigidBody2D = GetComponent<Rigidbody2D>();
+	}
 
-    float x, y;
-    private byte health = 3;
+	void Update()
+	{
+		if (!canMove) return; // Si no puede moverse, sale del método
 
-    void Update()
-    {
-        x = Input.GetAxis("Horizontal");
-        y = Input.GetAxis("Vertical");
+		x = Input.GetAxis("Horizontal");
+		y = Input.GetAxis("Vertical");
 
+		RigidBody2D.velocity = new Vector2(x * speed, y * speed);
+	}
 
-        //transform.Translate(x, y, 0);
+	private void OnCollisionEnter2D(Collision2D collision)
+	{
+		if (collision.gameObject.tag == "Walls")
+		{
+			Debug.Log("Wall hit");
+			health--;
+			if (health > 0)
+			{
+				RespawnPlayer();
+				ActualizarCorazones();
+			}
+			else
+			{
+				Ganaste.text = "Perdiste :(";
+				canMove = false; // Deshabilitar el movimiento
+				Invoke("ResetearJuego", 2f); // Reiniciar el juego después de 2 segundos
+			}
+		}
+		else if (collision.gameObject.tag == "Tierra")
+		{
+			Ganaste.text = "¡GANASTE!";
+			canMove = false; // Deshabilitar el movimiento al ganar
+		}
+	}
 
-        RigidBody2D.velocity = new Vector2(x*speed, y*speed);
-    }
+	void RespawnPlayer()
+	{
+		transform.position = PuntoDPartida.position;
+		RigidBody2D.velocity = Vector2.zero;
+	}
 
+	void ActualizarCorazones()
+	{
+		if (health >= 0 && health < corazones.Length)
+		{
+			corazones[health].SetActive(false);
+		}
+	}
 
-   
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Walls")
-        {
-            Debug.Log("Wall hit");
-            health--;
-            if (health == 0)
-            {
-                Ganaste.text = "PERDISTE :(";
-            }
-        }
-        else if (collision.gameObject.tag == "Tierra")
-        {
-            Ganaste.text = "¡GANASTE!";
-        }
-      
-    }
+	void ResetearJuego()
+	{
+		health = 3;
+		for (int i = 0; i < corazones.Length; i++)
+		{
+			corazones[i].SetActive(true);
+		}
+		Ganaste.text = ""; // Limpiar el mensaje de "Perdiste"
+		canMove = true; // Volver a habilitar el movimiento
+		RespawnPlayer(); // Regresar al punto de inicio
+	}
 }
 
-   
 
-    
+
+
+
 
 

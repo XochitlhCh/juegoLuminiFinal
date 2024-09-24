@@ -45,7 +45,7 @@ public class Movimiento : MonoBehaviour
             health--;
             if (health == 0)
             {
-                Ganaste.text = "Perdiste :(";
+                Ganaste.text = "PERDISTE :(";
             }
         }
         else if (collision.gameObject.tag == "Tierra")

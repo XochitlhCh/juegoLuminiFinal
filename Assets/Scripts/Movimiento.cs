@@ -55,7 +55,7 @@ public class Movimiento : MonoBehaviour
 				Invoke("ResetearJuego", 2f); // Reiniciar el juego después de 2 segundos
 			}
 		}
-		else if (collision.gameObject.tag == "Meta")
+		else if (collision.gameObject.tag == "Tierra")
 		{
 			Ganaste.text = "¡GANASTE!";
 			canMove = false; // Deshabilitar el movimiento al ganar

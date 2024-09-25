@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: pisoMorado_0
+  m_Name: Hills_0
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -1490285053, guid: 88eebe69231ed664c82bdaeada0a3d6c, type: 3}
+  m_Sprite: {fileID: -1578409727, guid: 6b568931d7a4dca4c9bb8062a160dc05, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

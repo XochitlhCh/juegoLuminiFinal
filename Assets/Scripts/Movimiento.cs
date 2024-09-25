@@ -15,6 +15,7 @@ public class Movimiento : MonoBehaviour
 	public GameObject[] corazones = new GameObject[3];
 	public Transform PuntoDPartida;
 
+<<<<<<< HEAD
 
 
 
@@ -75,6 +76,64 @@ public class Movimiento : MonoBehaviour
 		}
 	}
 
+=======
+	private bool canMove = true; // Nueva variable para controlar el movimiento
+
+	void Start()
+	{
+		RigidBody2D = GetComponent<Rigidbody2D>();
+	}
+
+	void Update()
+	{
+		if (!canMove) return; // Si no puede moverse, sale del método
+
+		x = Input.GetAxis("Horizontal");
+		y = Input.GetAxis("Vertical");
+
+		RigidBody2D.velocity = new Vector2(x * speed, y * speed);
+	}
+
+	private void OnCollisionEnter2D(Collision2D collision)
+	{
+		if (collision.gameObject.tag == "Walls")
+		{
+			Debug.Log("Wall hit");
+			health--;
+			if (health > 0)
+			{
+				RespawnPlayer();
+				ActualizarCorazones();
+			}
+			else
+			{
+				Ganaste.text = "Perdiste :(";
+				canMove = false; // Deshabilitar el movimiento
+				Invoke("ResetearJuego", 2f); // Reiniciar el juego después de 2 segundos
+			}
+		}
+		else if (collision.gameObject.tag == "Meta")
+		{
+			Ganaste.text = "¡GANASTE!";
+			canMove = false; // Deshabilitar el movimiento al ganar
+		}
+	}
+
+	void RespawnPlayer()
+	{
+		transform.position = PuntoDPartida.position;
+		RigidBody2D.velocity = Vector2.zero;
+	}
+
+	void ActualizarCorazones()
+	{
+		if (health >= 0 && health < corazones.Length)
+		{
+			corazones[health].SetActive(false);
+		}
+	}
+
+>>>>>>> parent of 5f785ea (Update Movimiento.cs)
 	void ResetearJuego()
 	{
 		health = 3;

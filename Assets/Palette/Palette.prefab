@@ -47,37 +47,12 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 22
 <<<<<<< HEAD
-<<<<<<< HEAD
       m_TileSpriteIndex: 22
-=======
-      m_TileSpriteIndex: 0
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741827
-  - first: {x: -3, y: -5, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 21
-      m_TileSpriteIndex: 1
->>>>>>> parent of 61a530d (Merge branch 'main' of https://github.com/XochitlhCh/juegoLuminiFinal)
       m_TileMatrixIndex: 0
       m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
-      m_AllTileFlags: 1073741827
-  - first: {x: 3, y: -5, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 27
-      m_TileSpriteIndex: 4294967295
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 2
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
       m_AllTileFlags: 1073741825
-<<<<<<< HEAD
 =======
       m_TileSpriteIndex: 0
       m_TileMatrixIndex: 0
@@ -140,8 +115,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-=======
->>>>>>> parent of 61a530d (Merge branch 'main' of https://github.com/XochitlhCh/juegoLuminiFinal)
   - first: {x: 4, y: -5, z: 0}
     second:
       serializedVersion: 2
@@ -237,7 +210,6 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 16
       m_TileSpriteIndex: 4294967295
-<<<<<<< HEAD
       m_TileMatrixIndex: 0
       m_TileColorIndex: 2
       m_TileObjectToInstantiateIndex: 65535
@@ -249,30 +221,18 @@ Tilemap:
       m_TileIndex: 17
 <<<<<<< HEAD
       m_TileSpriteIndex: 17
-=======
->>>>>>> parent of 61a530d (Merge branch 'main' of https://github.com/XochitlhCh/juegoLuminiFinal)
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 2
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-<<<<<<< HEAD
 =======
-=======
-  - first: {x: -3, y: -2, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 17
->>>>>>> parent of 61a530d (Merge branch 'main' of https://github.com/XochitlhCh/juegoLuminiFinal)
       m_TileSpriteIndex: 4
       m_TileMatrixIndex: 0
       m_TileColorIndex: 5
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741827
-<<<<<<< HEAD
->>>>>>> parent of 61a530d (Merge branch 'main' of https://github.com/XochitlhCh/juegoLuminiFinal)
-=======
 >>>>>>> parent of 61a530d (Merge branch 'main' of https://github.com/XochitlhCh/juegoLuminiFinal)
   - first: {x: -1, y: -2, z: 0}
     second:
@@ -309,7 +269,6 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 12
       m_TileSpriteIndex: 4294967295
-<<<<<<< HEAD
       m_TileMatrixIndex: 0
       m_TileColorIndex: 2
       m_TileObjectToInstantiateIndex: 65535
@@ -321,30 +280,18 @@ Tilemap:
       m_TileIndex: 19
 <<<<<<< HEAD
       m_TileSpriteIndex: 19
-=======
->>>>>>> parent of 61a530d (Merge branch 'main' of https://github.com/XochitlhCh/juegoLuminiFinal)
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 2
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-<<<<<<< HEAD
 =======
-=======
-  - first: {x: -4, y: -1, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 19
->>>>>>> parent of 61a530d (Merge branch 'main' of https://github.com/XochitlhCh/juegoLuminiFinal)
       m_TileSpriteIndex: 5
       m_TileMatrixIndex: 0
       m_TileColorIndex: 6
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741827
-<<<<<<< HEAD
->>>>>>> parent of 61a530d (Merge branch 'main' of https://github.com/XochitlhCh/juegoLuminiFinal)
-=======
 >>>>>>> parent of 61a530d (Merge branch 'main' of https://github.com/XochitlhCh/juegoLuminiFinal)
   - first: {x: -1, y: -1, z: 0}
     second:
@@ -504,7 +451,6 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 8fe70efcc901d97429138c0ae3401e94, type: 2}
   - m_RefCount: 1
 <<<<<<< HEAD
-<<<<<<< HEAD
     m_Data: {fileID: 11400000, guid: 213f5daedd56bc64ba24870764298204, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: d57e7a19e4460a14baf5f7e2b73f7437, type: 2}
@@ -517,8 +463,6 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 9ba9ec1f6093d68458e832fc6a2ab3c3, type: 2}
 =======
-=======
->>>>>>> parent of 61a530d (Merge branch 'main' of https://github.com/XochitlhCh/juegoLuminiFinal)
     m_Data: {fileID: 0}
   - m_RefCount: 2
     m_Data: {fileID: 0}
@@ -544,9 +488,6 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: dc12b0525103d994ebcd2b00a2e7d5d9, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: af428d7ea5c513945ab64427d9d8712a, type: 2}
-<<<<<<< HEAD
->>>>>>> parent of 61a530d (Merge branch 'main' of https://github.com/XochitlhCh/juegoLuminiFinal)
-=======
 >>>>>>> parent of 61a530d (Merge branch 'main' of https://github.com/XochitlhCh/juegoLuminiFinal)
   m_TileSpriteArray:
   - m_RefCount: 1
@@ -570,7 +511,6 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: -2070963223, guid: ec9756e15df13e14a8a0d93fb539b6f8, type: 3}
   - m_RefCount: 1
-<<<<<<< HEAD
 <<<<<<< HEAD
     m_Data: {fileID: 156857693, guid: 7c2d60743f4e6d94a9b0ccffe308d850, type: 3}
   - m_RefCount: 1
@@ -606,11 +546,6 @@ Tilemap:
   m_TileMatrixArray:
   - m_RefCount: 31
 >>>>>>> parent of 61a530d (Merge branch 'main' of https://github.com/XochitlhCh/juegoLuminiFinal)
-=======
-    m_Data: {fileID: 21300000, guid: 8e75d8a589d53ab40bee28fea3d14e3e, type: 3}
-  m_TileMatrixArray:
-  - m_RefCount: 31
->>>>>>> parent of 61a530d (Merge branch 'main' of https://github.com/XochitlhCh/juegoLuminiFinal)
     m_Data:
       e00: 1
       e01: 0
@@ -631,7 +566,6 @@ Tilemap:
   m_TileColorArray:
   - m_RefCount: 1
 <<<<<<< HEAD
-<<<<<<< HEAD
     m_Data: {r: 0.757768, g: 0.3294206, b: 0.3485451, a: 1}
   - m_RefCount: 22
     m_Data: {r: 1, g: 1, b: 1, a: 1}
@@ -644,14 +578,6 @@ Tilemap:
   - m_RefCount: 23
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   - m_RefCount: 1
-=======
-    m_Data: {r: 0.8607952, g: 0.48796213, b: 0.59168756, a: 1}
-  - m_RefCount: 1
-    m_Data: {r: 0.95592725, g: 0.495541, b: 0.631499, a: 1}
-  - m_RefCount: 23
-    m_Data: {r: 1, g: 1, b: 1, a: 1}
-  - m_RefCount: 1
->>>>>>> parent of 61a530d (Merge branch 'main' of https://github.com/XochitlhCh/juegoLuminiFinal)
     m_Data: {r: 0.90800357, g: 0.45443782, b: 0.4761157, a: 1}
   - m_RefCount: 2
     m_Data: {r: 0.89842385, g: 0.48638752, b: 0.5700458, a: 1}
@@ -661,20 +587,13 @@ Tilemap:
     m_Data: {r: 0.7387868, g: 0.4317087, b: 0.5067394, a: 1}
   - m_RefCount: 1
     m_Data: {r: 0.8368329, g: 0.34054506, b: 0.39325067, a: 1}
-<<<<<<< HEAD
->>>>>>> parent of 61a530d (Merge branch 'main' of https://github.com/XochitlhCh/juegoLuminiFinal)
-=======
 >>>>>>> parent of 61a530d (Merge branch 'main' of https://github.com/XochitlhCh/juegoLuminiFinal)
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -4, y: -6, z: 0}
 <<<<<<< HEAD
-<<<<<<< HEAD
   m_Size: {x: 7, y: 7, z: 1}
-=======
-  m_Size: {x: 9, y: 8, z: 1}
->>>>>>> parent of 61a530d (Merge branch 'main' of https://github.com/XochitlhCh/juegoLuminiFinal)
 =======
   m_Size: {x: 9, y: 8, z: 1}
 >>>>>>> parent of 61a530d (Merge branch 'main' of https://github.com/XochitlhCh/juegoLuminiFinal)
@@ -788,19 +707,11 @@ Grid:
   m_GameObject: {fileID: 7867051036265178678}
   m_Enabled: 1
 <<<<<<< HEAD
-<<<<<<< HEAD
   m_CellSize: {x: 0.96, y: 0.64, z: 0}
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
 --- !u!114 &4928531879259795645
-=======
-  m_CellSize: {x: 0.32, y: 0.32, z: 0}
-  m_CellGap: {x: 0, y: 0, z: 0}
-  m_CellLayout: 0
-  m_CellSwizzle: 0
---- !u!114 &8304274164457813330
->>>>>>> parent of 61a530d (Merge branch 'main' of https://github.com/XochitlhCh/juegoLuminiFinal)
 =======
   m_CellSize: {x: 0.32, y: 0.32, z: 0}
   m_CellGap: {x: 0, y: 0, z: 0}

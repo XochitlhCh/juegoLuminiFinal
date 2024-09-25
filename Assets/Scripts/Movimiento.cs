@@ -15,7 +15,10 @@ public class Movimiento : MonoBehaviour
 	public GameObject[] corazones = new GameObject[3];
 	public Transform PuntoDPartida;
 
-	private bool canMove = true; // Nueva variable para controlar el movimiento
+
+
+
+    private bool canMove = true; // Nueva variable para controlar el movimiento
 
 	void Start()
 	{
@@ -30,7 +33,8 @@ public class Movimiento : MonoBehaviour
 		y = Input.GetAxis("Vertical");
 
 		RigidBody2D.velocity = new Vector2(x * speed, y * speed);
-	}
+
+    }
 
 	private void OnCollisionEnter2D(Collision2D collision)
 	{

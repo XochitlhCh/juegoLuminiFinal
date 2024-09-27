@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Walls
+  - NextLevel
+  - Win
   layers:
   - Default
   - TransparentFX

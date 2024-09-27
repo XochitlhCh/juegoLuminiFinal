@@ -626,8 +626,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000030517578, y: -88}
-  m_SizeDelta: {x: -0.000061035, y: 100.9856}
+  m_AnchoredPosition: {x: -2.3240051, y: -98.7254}
+  m_SizeDelta: {x: 4.648, y: 129.4757}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1002099365
 MonoBehaviour:
@@ -642,7 +642,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_Color: {r: 0.5984332, g: 0.45882353, b: 0.6862745, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -704,8 +704,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 60}
+  m_AnchoredPosition: {x: -0.000010251999, y: 19}
+  m_SizeDelta: {x: 211.3377, y: 146.8073}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1737569634
 Animator:
@@ -804,7 +804,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e09af2f68807423439af03a89df36364, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 922501c42a3b5dc448bf30fdd814db5a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

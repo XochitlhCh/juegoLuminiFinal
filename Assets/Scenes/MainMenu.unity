@@ -626,7 +626,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2.3240051, y: -98.7254}
+  m_AnchoredPosition: {x: -2.3239746, y: -98.7254}
   m_SizeDelta: {x: 4.648, y: 129.4757}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1002099365
@@ -686,7 +686,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1737569633
 RectTransform:
   m_ObjectHideFlags: 0
@@ -772,9 +772,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 272544752}
+      - m_Target: {fileID: 272544747}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: startGame
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

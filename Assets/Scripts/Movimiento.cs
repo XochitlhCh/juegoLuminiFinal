@@ -7,9 +7,9 @@ using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class Movimiento : MonoBehaviour
 {
-
+   
     private Rigidbody2D RigidBody2D;
-    public Text Ganaste;
+    public GameObject Ganaste;
     public byte speed = 5;
     float x, y;
     private float[] movements = new float[4] { 1, 1, 1, 1 }; //up, down, left, right 
@@ -89,33 +89,28 @@ public class Movimiento : MonoBehaviour
             }
             else
             {
-                Ganaste.text = "Perdiste :(";
+                Ganaste.SetActive(true);
+                print("LOSER");
                 canMove = false; // Deshabilitar el movimiento
-                Invoke("ResetearJuego", 2f); // Reiniciar el juego después de 2 segundos
+                //Invoke("ResetearJuego", 2f); // Reiniciar el juego después de 2 segundos
             }
         }
-        else if (collision.gameObject.tag == "Tierra")
-        {
-            Ganaste.text = "¡GANASTE!";
-            canMove = false; // Deshabilitar el movimiento al ganar
-        }
-        //else
-        //{
+        
 
-        //    NoMovimiento noMovimiento = collision.collider.GetComponent<NoMovimiento>();
-        //    print("xd2");
-        //    if (noMovimiento != null)
-        //    {
-        //        print("xd3");
-
-        //        movements = noMovimiento.NoMov();
-        //    }
-        //}
 
 
     }
 
-    
+    private void Winn(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "NextLevel")
+        {
+            Ganaste.SetActive(true);
+            canMove = false; // Deshabilitar el movimiento al ganar
+        }
+    }
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         NoMovimiento noMovimiento = collision.GetComponent<NoMovimiento>();
@@ -151,7 +146,7 @@ public class Movimiento : MonoBehaviour
         {
             corazones[i].SetActive(true);
         }
-        Ganaste.text = ""; // Limpiar el mensaje de "Perdiste"
+        Ganaste.SetActive(false);// Limpiar el mensaje de "Perdiste"
         canMove = true; // Volver a habilitar el movimiento
         RespawnPlayer(); // Regresar al punto de inicio
     }

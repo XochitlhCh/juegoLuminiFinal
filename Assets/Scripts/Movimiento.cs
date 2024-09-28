@@ -8,7 +8,7 @@ using static UnityEditor.Searcher.SearcherWindow.Alignment;
 public class Movimiento : MonoBehaviour
 {
 
-    AudioListener audioListener;
+    public AudioListener audioListener;
 
     private Rigidbody2D RigidBody2D;
     public GameObject Ganaste;
@@ -97,7 +97,9 @@ public class Movimiento : MonoBehaviour
             }
             else
             {
+                audioListener.PlaySFX(audioListener.loser);
                 RespawnPlayer();
+
                 canMove = false;
                 Ganaste.SetActive(true);
                 print("LOSER");
@@ -132,6 +134,7 @@ public class Movimiento : MonoBehaviour
         {
            
             YouWin.SetActive(true);
+           
             audioListener.PlaySFX(audioListener.YouWin);
             print("WINNER");
             canMove = false;

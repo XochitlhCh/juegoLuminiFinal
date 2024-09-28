@@ -7,7 +7,9 @@ using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class Movimiento : MonoBehaviour
 {
-   
+
+    AudioListener audioListener;
+
     private Rigidbody2D RigidBody2D;
     public GameObject Ganaste;
     public byte speed = 3;
@@ -24,8 +26,13 @@ public class Movimiento : MonoBehaviour
     void Start()
     {
         RigidBody2D = GetComponent<Rigidbody2D>();
-    }
+        audioListener = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioListener>();
 
+    }
+    //public void Awake()
+    //{
+    //    audioListener = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioListener>();
+    //}
     void Update()
     {
         if (!canMove) return; // Si no puede moverse, sale del método
@@ -123,7 +130,9 @@ public class Movimiento : MonoBehaviour
         }
         if (collision.gameObject.tag == "NextLevel")
         {
+           
             YouWin.SetActive(true);
+            audioListener.PlaySFX(audioListener.YouWin);
             print("WINNER");
             canMove = false;
         }

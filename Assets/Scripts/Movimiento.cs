@@ -9,7 +9,7 @@ public class Movimiento : MonoBehaviour
 {
 
     public AudioListener audioListener;
-
+    public GameObject MiniMap;
     private Rigidbody2D RigidBody2D;
     public GameObject Ganaste;
     public byte speed = 3;
@@ -99,7 +99,7 @@ public class Movimiento : MonoBehaviour
             {
                 audioListener.PlaySFX(audioListener.loser);
                 RespawnPlayer();
-
+                MiniMap.SetActive(false);
                 canMove = false;
                 Ganaste.SetActive(true);
                 print("LOSER");
@@ -132,8 +132,8 @@ public class Movimiento : MonoBehaviour
         }
         if (collision.gameObject.tag == "NextLevel")
         {
-           
-            YouWin.SetActive(true);
+            MiniMap.SetActive(false);
+            YouWin.SetActive(false);
            
             audioListener.PlaySFX(audioListener.YouWin);
             print("WINNER");
@@ -149,6 +149,7 @@ public class Movimiento : MonoBehaviour
     {
         transform.position = PuntoDPartida.position;
         RigidBody2D.velocity = Vector2.zero;
+        MiniMap.SetActive(true);
     }
 
     void ActualizarCorazones()
@@ -168,6 +169,7 @@ public class Movimiento : MonoBehaviour
         }
         Ganaste.SetActive(false);// Limpiar el mensaje de "Perdiste"
         canMove = true; // Volver a habilitar el movimiento
+        MiniMap.SetActive(true);
         RespawnPlayer(); // Regresar al punto de inicio
     }
 

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 49a9b2b87530bc045b8642353bbba8b0
+guid: df53a2264f1d3b84eac93356c32cde0a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AnimacionLumini_0
+      name: jiji_0
       rect:
         serializedVersion: 2
         x: 2
         y: 1
         width: 22
-        height: 29
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62f0715f96b7bdb4e8c6822d6704f734
-      internalID: -695082713
+      spriteID: 79ce9c4a0b7bd6e4e91d03cca53b51ad
+      internalID: 2081842199
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimacionLumini_1
+      name: jiji_1
       rect:
         serializedVersion: 2
         x: 26
         y: 1
         width: 22
-        height: 29
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63d0135ca1636f54a868cbd1ae81ee14
-      internalID: -1833304404
+      spriteID: 57bbc2a6ada8a8240b3a2dfeed1fbfe9
+      internalID: 1579082573
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimacionLumini_2
+      name: jiji_2
       rect:
         serializedVersion: 2
         x: 50
         y: 1
-        width: 22
-        height: 29
+        width: 23
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 330e942aa39f5834e8c73ec9cd1dda62
-      internalID: -739864377
+      spriteID: d3b66e607346e6c46921ab5bda1ef4df
+      internalID: 381072109
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimacionLumini_3
+      name: jiji_3
       rect:
         serializedVersion: 2
-        x: 74
+        x: 75
         y: 1
         width: 22
-        height: 29
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,8 +187,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 34e6ac01d78426b4cbe8233a2ce5cc2e
-      internalID: -1489479340
+      spriteID: 4e974f1dc38f58b48b3ef0d931e95343
+      internalID: 1193189731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jiji_4
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 1
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25fc5ba5c3a469c48ab2b2c3f568775f
+      internalID: -210566815
       vertices: []
       indices: 
       edges: []
@@ -204,10 +225,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      AnimacionLumini_0: -695082713
-      AnimacionLumini_1: -1833304404
-      AnimacionLumini_2: -739864377
-      AnimacionLumini_3: -1489479340
+      jiji_0: 2081842199
+      jiji_1: 1579082573
+      jiji_2: 381072109
+      jiji_3: 1193189731
+      jiji_4: -210566815
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

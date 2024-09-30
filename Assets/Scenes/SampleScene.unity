@@ -607,7 +607,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 7340071
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: 49060d6bc2bedbd46b747e0b50280da9, type: 2}
   m_TargetDisplay: 0
@@ -724,7 +724,7 @@ GameObject:
   - component: {fileID: 280461637}
   - component: {fileID: 280461636}
   - component: {fileID: 280461638}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: heart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19309,7 +19309,7 @@ GameObject:
   - component: {fileID: 2061730343}
   - component: {fileID: 2061730342}
   - component: {fileID: 2061730344}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: heart (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19586,7 +19586,7 @@ GameObject:
   - component: {fileID: 2086772915}
   - component: {fileID: 2086772914}
   - component: {fileID: 2086772916}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: heart (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

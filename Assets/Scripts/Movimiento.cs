@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.Design;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.Searcher.SearcherWindow.Alignment;
+//using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class Movimiento : MonoBehaviour
 {
@@ -131,9 +131,12 @@ public class Movimiento : MonoBehaviour
             movements = noMovimiento.NoMov();
         }
         if (collision.gameObject.tag == "NextLevel")
+
         {
             MiniMap.SetActive(false);
-            YouWin.SetActive(false);
+            YouWin.SetActive(true);
+           
+           
            
             audioListener.PlaySFX(audioListener.YouWin);
             print("WINNER");
@@ -149,7 +152,7 @@ public class Movimiento : MonoBehaviour
     {
         transform.position = PuntoDPartida.position;
         RigidBody2D.velocity = Vector2.zero;
-        MiniMap.SetActive(true);
+        //MiniMap.SetActive(true);
     }
 
     void ActualizarCorazones()

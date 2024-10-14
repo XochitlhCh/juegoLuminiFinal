@@ -9,6 +9,7 @@ public class Movimiento : MonoBehaviour
 {
 
     public AudioListener audioListener;
+
     public GameObject MiniMap;
     private Rigidbody2D RigidBody2D;
     public GameObject Ganaste;

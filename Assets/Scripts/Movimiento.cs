@@ -113,6 +113,7 @@ public class Movimiento : MonoBehaviour
         }
         else if (collision.gameObject.tag == "NextLevelMirror")/*pasar a 3er nivel*/
         {
+            RespawnPlayer();
             MiniMap.SetActive(false);
             YouWin.SetActive(true);
 

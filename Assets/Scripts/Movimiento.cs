@@ -58,9 +58,7 @@ public class Movimiento : MonoBehaviour
 
         }
 
-
         y = Input.GetAxis("Vertical");
-
 
         if (movements[0] == 0)
         {
@@ -107,8 +105,6 @@ public class Movimiento : MonoBehaviour
                 // Deshabilitar el movimiento
                 //Invoke("ResetearJuego", 2f); // Reiniciar el juego después de 2 segundos
             }
-    
-
 
         }
         else if (collision.gameObject.tag == "NextLevelMirror")/*pasar a 3er nivel*/
@@ -126,39 +122,32 @@ public class Movimiento : MonoBehaviour
         }
 
 
-
-
-
-
     }
-
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         NoMovimiento noMovimiento = collision.GetComponent<NoMovimiento>();
-        print("xd2");
-        
-        if (noMovimiento !=null)
-        {
-            print("xd3");
 
+        if (noMovimiento != null)
+        {
             movements = noMovimiento.NoMov();
         }
-        if (collision.gameObject.tag == "NextLevel")
 
+        if (collision.CompareTag("NextLevel"))
         {
-            MiniMap.SetActive(false);
-            YouWin.SetActive(true);
-           
-           
-           
-            audioListener.PlaySFX(audioListener.YouWin);
-            print("WINNER");
-            canMove = false;
+            StartCoroutine(EsperarYCambiarNivel()); // Llama a la corutina
         }
+    }
 
+    private IEnumerator EsperarYCambiarNivel()
+    {
+        canMove = false;                           
+        RigidBody2D.velocity = Vector2.zero;       // se detiene por completo
 
+        audioListener.PlaySFX(audioListener.YouWin); 
+        yield return new WaitForSeconds(1f);         // Espera 1seg
+
+        SceneController.instance.NextLevel();        // Cambia de escena
 
     }
 

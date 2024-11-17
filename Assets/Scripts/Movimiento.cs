@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 //using static UnityEditor.Searcher.SearcherWindow.Alignment;
@@ -111,51 +112,78 @@ public class Movimiento : MonoBehaviour
 
 
         }
-        else if (collision.gameObject.tag == "NextLevelMirror")/*pasar a 3er nivel*/
-        {
-            RespawnPlayer();
-            MiniMap.SetActive(false);
-            YouWin.SetActive(true);
+        //else if (collision.gameObject.tag == "NextLevelMirror")/*pasar a 3er nivel*/
+        //{
+        //    RespawnPlayer();
+        //    MiniMap.SetActive(false);
+        //    YouWin.SetActive(true);
 
 
 
-            audioListener.PlaySFX(audioListener.YouWin);
-            print("WINNER");
-            canMove = false;
+        //    audioListener.PlaySFX(audioListener.YouWin);
+        //    print("WINNER");
+        //    canMove = false;
 
-        }
+        //}
 
     }
 
 
 
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    NoMovimiento noMovimiento = collision.GetComponent<NoMovimiento>();
+    //    print("xd2");
+
+    //    if (noMovimiento !=null)
+    //    {
+    //        print("xd3");
+
+    //        movements = noMovimiento.NoMov();
+    //    }
+    //    if (collision.gameObject.tag == "NextLevel")
+
+    //    {
+    //        MiniMap.SetActive(false);
+    //        YouWin.SetActive(true);
+
+
+
+    //        audioListener.PlaySFX(audioListener.YouWin);
+    //        print("WINNER");
+    //        canMove = false;
+    //    }
+
+
+
+    //}
     private void OnTriggerEnter2D(Collider2D collision)
     {
         NoMovimiento noMovimiento = collision.GetComponent<NoMovimiento>();
-        print("xd2");
-        
-        if (noMovimiento !=null)
-        {
-            print("xd3");
 
+        if (noMovimiento != null)
+        {
             movements = noMovimiento.NoMov();
         }
-        if (collision.gameObject.tag == "NextLevel")
 
+        if (collision.CompareTag("NextLevel") /*|| collision.CompareTag("NextLevelMirror")*/)
         {
-            MiniMap.SetActive(false);
-            YouWin.SetActive(true);
-           
-           
-           
-            audioListener.PlaySFX(audioListener.YouWin);
-            print("WINNER");
-            canMove = false;
+            StartCoroutine(EsperarYCambiarNivel()); // Llama a la corutina
         }
+    }
 
+    private IEnumerator EsperarYCambiarNivel()
+    {
+        canMove = false;
+        RigidBody2D.velocity = Vector2.zero;       // se detiene por completo
 
+        audioListener.PlaySFX(audioListener.YouWin);
+        yield return new WaitForSeconds(1f);         // Espera 1seg
+
+        SceneController.instance.NextLevel();        // Cambia de escena
 
     }
+
 
 
     void RespawnPlayer()
@@ -173,18 +201,18 @@ public class Movimiento : MonoBehaviour
         }
     }
 
-    void ResetearJuego()
-    {
-        health = 3;
-        for (int i = 0; i < corazones.Length; i++)
-        {
-            corazones[i].SetActive(true);
-        }
-        Ganaste.SetActive(false);// Limpiar el mensaje de "Perdiste"
-        canMove = true; // Volver a habilitar el movimiento
-        MiniMap.SetActive(true);
-        RespawnPlayer(); // Regresar al punto de inicio
-    }
+    //void ResetearJuego()
+    //{
+    //    health = 3;
+    //    for (int i = 0; i < corazones.Length; i++)
+    //    {
+    //        corazones[i].SetActive(true);
+    //    }
+    //    Ganaste.SetActive(false);// Limpiar el mensaje de "Perdiste"
+    //    canMove = true; // Volver a habilitar el movimiento
+    //    MiniMap.SetActive(true);
+    //    RespawnPlayer(); // Regresar al punto de inicio
+    //}
 
 
 

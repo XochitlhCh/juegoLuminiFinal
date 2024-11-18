@@ -112,19 +112,19 @@ public class Movimiento : MonoBehaviour
 
 
         }
-        //else if (collision.gameObject.tag == "NextLevelMirror")/*pasar a 3er nivel*/
-        //{
-        //    RespawnPlayer();
-        //    MiniMap.SetActive(false);
-        //    YouWin.SetActive(true);
+        else if (collision.gameObject.tag == "Win")/*pasar a 3er nivel*/
+        {
+            RespawnPlayer();
+            MiniMap.SetActive(false);
+            YouWin.SetActive(true);
 
 
 
-        //    audioListener.PlaySFX(audioListener.YouWin);
-        //    print("WINNER");
-        //    canMove = false;
+            audioListener.PlaySFX(audioListener.YouWin);
+            print("WINNER");
+            canMove = false;
 
-        //}
+        }
 
     }
 

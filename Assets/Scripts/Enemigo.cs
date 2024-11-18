@@ -7,7 +7,7 @@ public class Enemigo : MonoBehaviour
 {
 
     [SerializeField]List<Transform> wayPoints;
-    float vel = 2;
+    float vel = 1;
     float distance = 0.2f;
     byte sigPos = 0;
     // Start is called before the first frame update

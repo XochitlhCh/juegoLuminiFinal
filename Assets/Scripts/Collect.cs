@@ -6,7 +6,7 @@ public class Collect : MonoBehaviour
     {
         if (collision.name == "Player")
         {
-            Debug.Log("You got the mirror");
+            Debug.Log("You got the magic ball");
             Destroy(gameObject);
         }
     }

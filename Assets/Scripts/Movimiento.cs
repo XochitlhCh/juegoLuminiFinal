@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.Design;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 //using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
@@ -31,10 +32,6 @@ public class Movimiento : MonoBehaviour
         audioListener = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioListener>();
 
     }
-    //public void Awake()
-    //{
-    //    audioListener = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioListener>();
-    //}
     void Update()
     {
         if (!canMove) return; // Si no puede moverse, sale del método
@@ -112,51 +109,31 @@ public class Movimiento : MonoBehaviour
 
 
         }
+<<<<<<< Updated upstream
         else if (collision.gameObject.tag == "Win")/*pasar a 3er nivel*/
+=======
+        else if (collision.gameObject.tag == "NextLevelMirror")/*pasar a 3er nivel*/
+>>>>>>> Stashed changes
         {
             RespawnPlayer();
             MiniMap.SetActive(false);
             YouWin.SetActive(true);
 
+            audioListener.PlaySFX(audioListener.YouWin);
+            print("WINNER");
+            canMove = false;
 
+<<<<<<< Updated upstream
 
             audioListener.PlaySFX(audioListener.YouWin);
             print("WINNER");
             canMove = false;
 
+=======
+>>>>>>> Stashed changes
         }
 
     }
-
-
-
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    NoMovimiento noMovimiento = collision.GetComponent<NoMovimiento>();
-    //    print("xd2");
-
-    //    if (noMovimiento !=null)
-    //    {
-    //        print("xd3");
-
-    //        movements = noMovimiento.NoMov();
-    //    }
-    //    if (collision.gameObject.tag == "NextLevel")
-
-    //    {
-    //        MiniMap.SetActive(false);
-    //        YouWin.SetActive(true);
-
-
-
-    //        audioListener.PlaySFX(audioListener.YouWin);
-    //        print("WINNER");
-    //        canMove = false;
-    //    }
-
-
-
-    //}
     private void OnTriggerEnter2D(Collider2D collision)
     {
         NoMovimiento noMovimiento = collision.GetComponent<NoMovimiento>();
@@ -178,42 +155,68 @@ public class Movimiento : MonoBehaviour
         RigidBody2D.velocity = Vector2.zero;       // se detiene por completo
 
         audioListener.PlaySFX(audioListener.YouWin);
-        yield return new WaitForSeconds(1f);         // Espera 1seg
+        yield return new WaitForSeconds(1.5f);         // Espera 1seg
 
         SceneController.instance.NextLevel();        // Cambia de escena
 
     }
 
-
-
     void RespawnPlayer()
     {
+        // Mover al jugador al punto de partida
         transform.position = PuntoDPartida.position;
         RigidBody2D.velocity = Vector2.zero;
-        //MiniMap.SetActive(true);
+
+        // Si pierde todas las vidas
+        if (health <= 0)
+        {
+            // Mostrar pantalla de derrota
+            Ganaste.SetActive(true);
+            MiniMap.SetActive(false);
+
+            // Desactivar movimiento del jugador
+            canMove = false;
+
+            // Opción: Reiniciar nivel después de un tiempo
+            Invoke(nameof(ResetLevel), 2f);
+        }
+    }
+
+    void ResetLevel()
+    {
+        // Reinicia el nivel actual
+        SceneController.instance.LoadScene(SceneManager.GetActiveScene().name);
+
+        // Restablecer el estado del jugador
+        health = 3; // Reiniciar vidas
+        ActualizarCorazones(); // Mostrar corazones nuevamente
+        canMove = true; // Permitir movimiento
+        Ganaste.SetActive(false); // Ocultar mensaje
+        MiniMap.SetActive(true); // Mostrar minimapa
     }
 
     void ActualizarCorazones()
     {
-        if (health >= 0 && health < corazones.Length)
+        // Desactivar corazones según las vidas restantes
+        for (int i = 0; i < corazones.Length; i++)
         {
-            corazones[health].SetActive(false);
+            corazones[i].SetActive(i < health);
         }
     }
 
-    //void ResetearJuego()
+    //void RespawnPlayer()
     //{
-    //    health = 3;
-    //    for (int i = 0; i < corazones.Length; i++)
-    //    {
-    //        corazones[i].SetActive(true);
-    //    }
-    //    Ganaste.SetActive(false);// Limpiar el mensaje de "Perdiste"
-    //    canMove = true; // Volver a habilitar el movimiento
-    //    MiniMap.SetActive(true);
-    //    RespawnPlayer(); // Regresar al punto de inicio
+    //    transform.position = PuntoDPartida.position;
+    //    RigidBody2D.velocity = Vector2.zero;
+    //    //MiniMap.SetActive(true);
     //}
 
-
+    //void ActualizarCorazones()
+    //{
+    //    if (health >= 0 && health < corazones.Length)
+    //    {
+    //        corazones[health].SetActive(false);
+    //    }
+    //}
 
 }

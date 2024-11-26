@@ -83,7 +83,7 @@ public class Movimiento : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        print("x6");
+       
 
         if (collision.gameObject.tag == "Walls")
         {
@@ -97,13 +97,15 @@ public class Movimiento : MonoBehaviour
             else
             {
                 audioListener.PlaySFX(audioListener.loser);
-                RespawnPlayer();
+                //RespawnPlayer();
                 MiniMap.SetActive(false);
                 canMove = false;
                 Ganaste.SetActive(true);
+                //why ganaste??? idk xochilth made this part well let me see that
+                //ResetLevel(); // si quitas este jala la pantalla de game over creo
 
                 //Invoke(nameof(ResetLevel), 2f);
-                print("LOSER");
+                //print("LOSER");
 
                 // Deshabilitar el movimiento
                 //Invoke("ResetearJuego", 2f); // Reiniciar el juego después de 2 segundos
@@ -160,23 +162,12 @@ public class Movimiento : MonoBehaviour
 
         // falta hacer que cuando aparezca se tarde en poder moverse otra vez 
 
-        // Si pierde todas las vidas
-        if (health <= 0)
-        {
-            // Mostrar pantalla de derrota
-            Ganaste.SetActive(true);
-            MiniMap.SetActive(false);
-            ResetLevel();
-            //// Desactivar movimiento del jugador
-            //canMove = false;
-
-            //// Opción: Reiniciar nivel después de un tiempo
-            //Invoke(nameof(ResetLevel), 2f);
-        }
     }
 
     void ResetLevel()
     {
+        //RespawnPlayer();
+
         // Reinicia el nivel actual
         SceneController.instance.LoadScene(SceneManager.GetActiveScene().name);
 

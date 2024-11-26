@@ -38,11 +38,11 @@ public class Movimiento : MonoBehaviour
 
         x = Input.GetAxis("Horizontal");
 
-        if (movements[2]==0) //si abajo = 0/inactivo
+        if (movements[2] == 0) //si abajo = 0/inactivo
         {
             if (x < 0)// si es hacia la izquierda x se vuelve 0
             {
-                x= 0;
+                x = 0;
             }
 
         }
@@ -101,19 +101,18 @@ public class Movimiento : MonoBehaviour
                 MiniMap.SetActive(false);
                 canMove = false;
                 Ganaste.SetActive(true);
+
+                //Invoke(nameof(ResetLevel), 2f);
                 print("LOSER");
+
                 // Deshabilitar el movimiento
                 //Invoke("ResetearJuego", 2f); // Reiniciar el juego después de 2 segundos
             }
-    
+
 
 
         }
-<<<<<<< Updated upstream
-        else if (collision.gameObject.tag == "Win")/*pasar a 3er nivel*/
-=======
-        else if (collision.gameObject.tag == "NextLevelMirror")/*pasar a 3er nivel*/
->>>>>>> Stashed changes
+        else if (collision.gameObject.tag == "NextLevelMirror")/* pasar a 3er nivel*/
         {
             RespawnPlayer();
             MiniMap.SetActive(false);
@@ -123,14 +122,6 @@ public class Movimiento : MonoBehaviour
             print("WINNER");
             canMove = false;
 
-<<<<<<< Updated upstream
-
-            audioListener.PlaySFX(audioListener.YouWin);
-            print("WINNER");
-            canMove = false;
-
-=======
->>>>>>> Stashed changes
         }
 
     }
@@ -167,18 +158,20 @@ public class Movimiento : MonoBehaviour
         transform.position = PuntoDPartida.position;
         RigidBody2D.velocity = Vector2.zero;
 
+        // falta hacer que cuando aparezca se tarde en poder moverse otra vez 
+
         // Si pierde todas las vidas
         if (health <= 0)
         {
             // Mostrar pantalla de derrota
             Ganaste.SetActive(true);
             MiniMap.SetActive(false);
+            ResetLevel();
+            //// Desactivar movimiento del jugador
+            //canMove = false;
 
-            // Desactivar movimiento del jugador
-            canMove = false;
-
-            // Opción: Reiniciar nivel después de un tiempo
-            Invoke(nameof(ResetLevel), 2f);
+            //// Opción: Reiniciar nivel después de un tiempo
+            //Invoke(nameof(ResetLevel), 2f);
         }
     }
 
@@ -203,20 +196,4 @@ public class Movimiento : MonoBehaviour
             corazones[i].SetActive(i < health);
         }
     }
-
-    //void RespawnPlayer()
-    //{
-    //    transform.position = PuntoDPartida.position;
-    //    RigidBody2D.velocity = Vector2.zero;
-    //    //MiniMap.SetActive(true);
-    //}
-
-    //void ActualizarCorazones()
-    //{
-    //    if (health >= 0 && health < corazones.Length)
-    //    {
-    //        corazones[health].SetActive(false);
-    //    }
-    //}
-
 }

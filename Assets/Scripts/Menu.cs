@@ -24,7 +24,7 @@ public class Menu : MonoBehaviour
         SceneManager.LoadScene("SampleScene");
 
        
-            SceneManager.LoadScene("SampleScene");
+  
         
 
     }

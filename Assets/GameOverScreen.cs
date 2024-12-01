@@ -18,8 +18,8 @@ public class GameOverScreen : MonoBehaviour
         ///here is your problem girl
         ///the button always change you to the first scence
         ///you know??? 
-        ///
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        ///now i know
+        SceneManager.LoadScene("MainMenu");
 
 
 

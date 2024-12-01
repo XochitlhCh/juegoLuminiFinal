@@ -114,7 +114,7 @@ public class Movimiento : MonoBehaviour
 
 
         }
-        else if (collision.gameObject.tag == "Win")/* pasar a  nivel*/
+        else if (collision.gameObject.tag == "Win")/* Ganar*/
         {
             RespawnPlayer();
             MiniMap.SetActive(false);

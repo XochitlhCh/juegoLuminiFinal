@@ -114,7 +114,7 @@ public class Movimiento : MonoBehaviour
 
 
         }
-        else if (collision.gameObject.tag == "NextLevelMirror")/* pasar a 3er nivel*/
+        else if (collision.gameObject.tag == "Win")/* pasar a  nivel*/
         {
             RespawnPlayer();
             MiniMap.SetActive(false);

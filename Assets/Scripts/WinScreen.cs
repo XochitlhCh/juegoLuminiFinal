@@ -5,15 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class WinScreen : MonoBehaviour
 {
-    public void Setup()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        gameObject.SetActive(true);
-    }
+        if (collision.name == "Player")
+        {
+            Debug.Log("WINNNNN");
 
-
-    public void ReStart()
-    {
-        SceneManager.LoadScene("SampleScene");
+        }
     }
 }
 

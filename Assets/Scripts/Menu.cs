@@ -20,16 +20,34 @@ public class Menu : MonoBehaviour
 
     public void Nivel1()
     {
+
         SceneManager.LoadScene("SampleScene");
+
+       
+            SceneManager.LoadScene("SampleScene");
+        
+
     }
 
     public void Nivel2()
     {
+
         SceneManager.LoadScene("Nivel2Final");
     }
 
     public void Nivel3()
     {
         SceneManager.LoadScene("Nivel3");
+
+
+     
+
+    }
+
+    public void Nivele()
+    {
+
+        SceneManager.LoadScene("Nivel3");
+
     }
 }

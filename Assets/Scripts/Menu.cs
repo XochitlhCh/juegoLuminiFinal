@@ -44,10 +44,10 @@ public class Menu : MonoBehaviour
 
     }
 
-    public void Nivele()
+    public void Nivel4()
     {
 
-        SceneManager.LoadScene("Nivel3");
+        SceneManager.LoadScene("Nivel4");
 
     }
 }

@@ -9,11 +9,19 @@ public class GameOverScreen : MonoBehaviour
     public void Setup()
     {
         gameObject.SetActive(true);
+        print("itsworking");
     }
 
 
     public void ReStart()
     {
-        SceneManager.LoadScene("SampleScene");
+        ///here is your problem girl
+        ///the button always change you to the first scence
+        ///you know??? 
+        ///
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+
+
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.Design;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 //using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
@@ -31,21 +32,17 @@ public class Movimiento : MonoBehaviour
         audioListener = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioListener>();
 
     }
-    //public void Awake()
-    //{
-    //    audioListener = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioListener>();
-    //}
     void Update()
     {
         if (!canMove) return; // Si no puede moverse, sale del método
 
         x = Input.GetAxis("Horizontal");
 
-        if (movements[2]==0) //si abajo = 0/inactivo
+        if (movements[2] == 0) //si abajo = 0/inactivo
         {
             if (x < 0)// si es hacia la izquierda x se vuelve 0
             {
-                x= 0;
+                x = 0;
             }
 
         }
@@ -86,7 +83,7 @@ public class Movimiento : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        print("x6");
+       
 
         if (collision.gameObject.tag == "Walls")
         {
@@ -100,25 +97,28 @@ public class Movimiento : MonoBehaviour
             else
             {
                 audioListener.PlaySFX(audioListener.loser);
-                RespawnPlayer();
+                //RespawnPlayer();
                 MiniMap.SetActive(false);
                 canMove = false;
                 Ganaste.SetActive(true);
-                print("LOSER");
+                //why ganaste??? idk xochilth made this part well let me see that
+                //ResetLevel(); // si quitas este jala la pantalla de game over creo
+
+                //Invoke(nameof(ResetLevel), 2f);
+                //print("LOSER");
+
                 // Deshabilitar el movimiento
                 //Invoke("ResetearJuego", 2f); // Reiniciar el juego después de 2 segundos
             }
-    
+
 
 
         }
-        else if (collision.gameObject.tag == "Win")/*pasar a 3er nivel*/
+        else if (collision.gameObject.tag == "NextLevelMirror")/* pasar a 3er nivel*/
         {
             RespawnPlayer();
             MiniMap.SetActive(false);
             YouWin.SetActive(true);
-
-
 
             audioListener.PlaySFX(audioListener.YouWin);
             print("WINNER");
@@ -127,36 +127,6 @@ public class Movimiento : MonoBehaviour
         }
 
     }
-
-
-
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    NoMovimiento noMovimiento = collision.GetComponent<NoMovimiento>();
-    //    print("xd2");
-
-    //    if (noMovimiento !=null)
-    //    {
-    //        print("xd3");
-
-    //        movements = noMovimiento.NoMov();
-    //    }
-    //    if (collision.gameObject.tag == "NextLevel")
-
-    //    {
-    //        MiniMap.SetActive(false);
-    //        YouWin.SetActive(true);
-
-
-
-    //        audioListener.PlaySFX(audioListener.YouWin);
-    //        print("WINNER");
-    //        canMove = false;
-    //    }
-
-
-
-    //}
     private void OnTriggerEnter2D(Collider2D collision)
     {
         NoMovimiento noMovimiento = collision.GetComponent<NoMovimiento>();
@@ -178,42 +148,43 @@ public class Movimiento : MonoBehaviour
         RigidBody2D.velocity = Vector2.zero;       // se detiene por completo
 
         audioListener.PlaySFX(audioListener.YouWin);
-        yield return new WaitForSeconds(1f);         // Espera 1seg
+        yield return new WaitForSeconds(1.5f);         // Espera 1seg
 
         SceneController.instance.NextLevel();        // Cambia de escena
 
     }
 
-
-
     void RespawnPlayer()
     {
+        // Mover al jugador al punto de partida
         transform.position = PuntoDPartida.position;
         RigidBody2D.velocity = Vector2.zero;
-        //MiniMap.SetActive(true);
+
+        // falta hacer que cuando aparezca se tarde en poder moverse otra vez 
+
+    }
+
+    void ResetLevel()
+    {
+        //RespawnPlayer();
+
+        // Reinicia el nivel actual
+        SceneController.instance.LoadScene(SceneManager.GetActiveScene().name);
+
+        // Restablecer el estado del jugador
+        health = 3; // Reiniciar vidas
+        ActualizarCorazones(); // Mostrar corazones nuevamente
+        canMove = true; // Permitir movimiento
+        Ganaste.SetActive(false); // Ocultar mensaje
+        MiniMap.SetActive(true); // Mostrar minimapa
     }
 
     void ActualizarCorazones()
     {
-        if (health >= 0 && health < corazones.Length)
+        // Desactivar corazones según las vidas restantes
+        for (int i = 0; i < corazones.Length; i++)
         {
-            corazones[health].SetActive(false);
+            corazones[i].SetActive(i < health);
         }
     }
-
-    //void ResetearJuego()
-    //{
-    //    health = 3;
-    //    for (int i = 0; i < corazones.Length; i++)
-    //    {
-    //        corazones[i].SetActive(true);
-    //    }
-    //    Ganaste.SetActive(false);// Limpiar el mensaje de "Perdiste"
-    //    canMove = true; // Volver a habilitar el movimiento
-    //    MiniMap.SetActive(true);
-    //    RespawnPlayer(); // Regresar al punto de inicio
-    //}
-
-
-
 }

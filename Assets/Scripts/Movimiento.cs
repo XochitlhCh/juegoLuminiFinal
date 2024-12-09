@@ -101,6 +101,7 @@ public class Movimiento : MonoBehaviour
                 MiniMap.SetActive(false);
                 canMove = false;
                 Ganaste.SetActive(true);
+                Debug.Log("PERDISTE JAJAJA");
                 //why ganaste??? idk xochilth made this part well let me see that
                 //ResetLevel(); // si quitas este jala la pantalla de game over creo
 

@@ -23,10 +23,6 @@ public class Menu : MonoBehaviour
 
         SceneManager.LoadScene("SampleScene");
 
-       
-  
-        
-
     }
 
     public void Nivel2()
